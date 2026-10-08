@@ -1,0 +1,6 @@
+// Copy this to App/Config.swift (rename to .swift) and paste your own key.
+import Foundation
+
+enum Config {
+    static let openWeatherAPIKey = "YOUR_API_KEY_HERE"
+}

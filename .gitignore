@@ -1,0 +1,25 @@
+# ---- Secrets: never commit your API key ----
+Config.swift
+
+# ---- macOS ----
+.DS_Store
+
+# ---- Xcode ----
+build/
+DerivedData/
+xcuserdata/
+*.xcuserstate
+*.xccheckout
+*.moved-aside
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# ---- Swift Package Manager ----
+.build/
+.swiftpm/
+
+# ---- CocoaPods / Carthage (not used here, harmless to keep) ----
+Pods/
+Carthage/Build/
