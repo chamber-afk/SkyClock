@@ -1,6 +1,5 @@
 import UIKit
 
-/// One small stat: icon, value and title (e.g. drop icon, "64%", "Humidity").
 final class DetailItemView: UIView {
 
     private let title: String
@@ -38,7 +37,6 @@ final class DetailItemView: UIView {
             stack.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
 
-        // VoiceOver reads the whole item as one phrase, e.g. "Humidity, 64%".
         isAccessibilityElement = true
     }
 
