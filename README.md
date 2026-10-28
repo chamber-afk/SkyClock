@@ -11,7 +11,6 @@ the weather and with day or night.
 - Feels like, humidity and wind; °C / °F toggle that is remembered
 - Pull to refresh, loading spinner, clear error messages
 - Flag image with an in-memory `NSCache` and an emoji fallback
-- Dynamic Type and VoiceOver labels
 
 ## Architecture
 MVVM. `WeatherViewModel` holds state and logic; view controllers only render it.
