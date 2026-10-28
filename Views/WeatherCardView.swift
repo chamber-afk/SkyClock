@@ -1,9 +1,6 @@
 import UIKit
 
-/// The frosted card that shows city, local time, temperature and details.
 final class WeatherCardView: UIView {
-
-    // MARK: - Subviews
 
     private let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialDark))
     private let cityLabel = UILabel.make(font: .scaled(.title1, size: 30, weight: .semibold), lines: 2)
@@ -20,8 +17,6 @@ final class WeatherCardView: UIView {
     private let humidityItem = DetailItemView(symbolName: "drop.fill", title: "Humidity")
     private let windItem = DetailItemView(symbolName: "wind", title: "Wind")
 
-    // MARK: - State
-
     private let timeFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.setLocalizedDateFormatFromTemplate("EEEdMMMjms")
@@ -31,8 +26,6 @@ final class WeatherCardView: UIView {
     private var hasContent = false
     private var countryCode = ""
     private var flagImage: UIImage?
-
-    // MARK: - Init
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -44,10 +37,7 @@ final class WeatherCardView: UIView {
         fatalError("init(coder:) is not used; views are created in code")
     }
 
-    // MARK: - Public
-
     func configure(with display: WeatherDisplay) {
-        // Forget the old flag when the country changes.
         if display.countryCode != countryCode {
             countryCode = display.countryCode
             flagImage = nil
@@ -68,7 +58,6 @@ final class WeatherCardView: UIView {
         startClock()
     }
 
-    /// Called when the flag image finishes downloading. Pass nil to keep the emoji fallback.
     func setFlag(_ image: UIImage?) {
         flagImage = image
         updateCountryRow(flagEmoji: countryCode.flagEmoji)
@@ -130,7 +119,7 @@ final class WeatherCardView: UIView {
 
         iconView.contentMode = .scaleAspectFit
         iconView.tintColor = .white
-        iconView.isAccessibilityElement = false // The condition text is read instead.
+        iconView.isAccessibilityElement = false 
 
         timeLabel.accessibilityTraits = .updatesFrequently
         temperatureLabel.adjustsFontSizeToFitWidth = true
