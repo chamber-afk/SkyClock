@@ -1,6 +1,5 @@
 import UIKit
 
-/// Full-screen gradient background that can cross-fade between colour sets.
 final class GradientView: UIView {
 
     private let gradientLayer = CAGradientLayer()
