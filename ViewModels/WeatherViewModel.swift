@@ -1,6 +1,5 @@
 import UIKit
 
-/// Holds the screen's state and business logic. Knows nothing about views.
 @MainActor
 final class WeatherViewModel {
 
@@ -11,7 +10,6 @@ final class WeatherViewModel {
         case failed(AppError)
     }
 
-    // MARK: - Outputs (the view controller binds to these)
 
     var onStateChange: ((State) -> Void)?
     var onFlagChange: ((UIImage?) -> Void)?
@@ -25,7 +23,6 @@ final class WeatherViewModel {
         didSet { onRecentsChange?(recentCities) }
     }
 
-    /// Name of the last successfully loaded city, used for pull-to-refresh.
     private(set) var currentCity: String?
 
     var useFahrenheit: Bool {
@@ -68,13 +65,11 @@ final class WeatherViewModel {
         search(city: city)
     }
 
-    /// Starts a search. A newer search cancels the one still running.
     func search(city: String) {
         searchTask?.cancel()
         searchTask = Task { await performSearch(city: city) }
     }
 
-    /// The async work behind `search(city:)`. Internal so tests can `await` it.
     func performSearch(city: String) async {
         let query = city.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !query.isEmpty else {
@@ -95,7 +90,7 @@ final class WeatherViewModel {
             guard !Task.isCancelled else { return }
             onFlagChange?(flag)
         } catch is CancellationError {
-            return // A newer search replaced this one.
+            return 
         } catch let error as AppError {
             state = .failed(error)
         } catch {
