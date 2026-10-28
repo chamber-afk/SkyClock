@@ -1,7 +1,5 @@
 import Foundation
 
-/// Raw JSON returned by OpenWeatherMap's `/data/2.5/weather` endpoint.
-/// Decoded with `.convertFromSnakeCase`, so `feels_like` maps to `feelsLike`.
 struct WeatherResponse: Decodable {
     let name: String
     let timezone: Int
