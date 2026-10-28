@@ -1,6 +1,5 @@
 import UIKit
 
-/// Horizontally scrolling row of tappable chips (used for recent searches).
 final class ChipsView: UIView {
 
     var onSelect: ((String) -> Void)?
@@ -31,7 +30,6 @@ final class ChipsView: UIView {
             stackView.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.trailingAnchor),
 
-            // The row is as tall as its chips.
             heightAnchor.constraint(equalTo: stackView.heightAnchor)
         ])
     }
