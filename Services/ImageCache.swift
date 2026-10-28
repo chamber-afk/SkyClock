@@ -1,6 +1,5 @@
 import UIKit
 
-/// Small in-memory cache so a flag is only downloaded once per session.
 final class ImageCache {
 
     static let shared = ImageCache()
