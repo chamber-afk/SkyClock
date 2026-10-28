@@ -1,8 +1,7 @@
 import UIKit
 
 final class SplashViewController: UIViewController {
-
-    /// Called when the user taps "Get Started". The scene delegate swaps in the main screen.
+    
     var onGetStarted: (() -> Void)?
 
     private let backgroundView = GradientView()
@@ -57,7 +56,7 @@ final class SplashViewController: UIViewController {
         contentStack.spacing = 12
         [iconView, titleLabel, subtitleLabel, startButton].forEach { contentStack.addArrangedSubview($0) }
         contentStack.setCustomSpacing(36, after: subtitleLabel)
-        contentStack.alpha = 0 // Revealed by animateIn()
+        contentStack.alpha = 0
     }
 
     private func setUpLayout() {
