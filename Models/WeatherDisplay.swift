@@ -1,6 +1,5 @@
 import Foundation
 
-/// Everything the weather card needs, already formatted as strings.
 struct WeatherDisplay {
     let city: String
     let countryCode: String
