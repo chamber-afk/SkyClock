@@ -4,8 +4,6 @@ protocol FlagServicing {
     func flagImage(for countryCode: String) async -> UIImage?
 }
 
-/// Downloads a flag PNG from flagcdn.com using the ISO country code returned by the weather API.
-/// Returns nil on any failure; the UI then falls back to an emoji flag.
 struct FlagService: FlagServicing {
 
     private let session: URLSession
