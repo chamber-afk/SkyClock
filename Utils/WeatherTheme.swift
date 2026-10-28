@@ -1,7 +1,5 @@
 import UIKit
 
-/// Maps an OpenWeatherMap condition id to a look: gradient colours and an SF Symbol.
-/// Condition ids: https://openweathermap.org/weather-conditions
 enum WeatherTheme {
     case clear, clouds, rain, storm, snow, mist
 
