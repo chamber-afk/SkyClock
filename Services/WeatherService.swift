@@ -22,7 +22,6 @@ struct WeatherService: WeatherServicing {
             throw AppError.missingAPIKey
         }
 
-        // URLComponents percent-encodes the city, so "New York" works.
         var components = URLComponents(string: Self.endpoint)
         components?.queryItems = [
             URLQueryItem(name: "q", value: city),
@@ -54,7 +53,6 @@ struct WeatherService: WeatherServicing {
         return try Self.decodeWeather(from: data)
     }
 
-    /// Separated from the network call so it can be unit tested with sample JSON.
     static func decodeWeather(from data: Data) throws -> Weather {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
