@@ -12,7 +12,6 @@ extension UIColor {
 }
 
 extension UIFont {
-    /// A system font that grows with the user's Dynamic Type setting.
     static func scaled(_ style: UIFont.TextStyle, size: CGFloat, weight: UIFont.Weight) -> UIFont {
         UIFontMetrics(forTextStyle: style).scaledFont(for: .systemFont(ofSize: size, weight: weight))
     }
@@ -34,7 +33,6 @@ extension UILabel {
 }
 
 extension String {
-    /// "IN" -> 🇮🇳. Built from regional indicator symbols, so it needs no network.
     var flagEmoji: String {
         let regionalIndicatorBase: UInt32 = 127_397
         return uppercased().unicodeScalars
