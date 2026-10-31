@@ -14,7 +14,6 @@ the weather and with day or night.
 
 ## Architecture
 MVVM. `WeatherViewModel` holds state and logic; view controllers only render it.
-`WeatherService` and `FlagService` sit behind protocols so tests can inject mocks.
 Networking uses `async/await` with a typed `AppError`.
 
 ```
